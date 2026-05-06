@@ -50,10 +50,10 @@ export default function AudienceChart({ data, onClose }: AudienceChartProps) {
         <div style={{ textAlign: "center", marginBottom: "28px" }}>
           <div style={{ fontSize: "2rem", marginBottom: "8px" }}>👥</div>
           <h3 style={{ fontWeight: 800, fontSize: "1.2rem", color: "var(--gold-400)" }}>
-            Ask the Audience
+            Seyirci Yoklaması
           </h3>
           <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", marginTop: "4px" }}>
-            The audience has voted!
+            Seyirci oy verdi!
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function AudienceChart({ data, onClose }: AudienceChartProps) {
         </div>
 
         <button onClick={onClose} className="btn-primary" style={{ width: "100%" }}>
-          Got it, thanks!
+          Anladım, teşekkürler!
         </button>
       </div>
     </div>

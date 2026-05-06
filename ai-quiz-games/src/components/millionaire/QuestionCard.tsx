@@ -50,7 +50,7 @@ export default function QuestionCard({
           borderRadius: "999px",
           letterSpacing: "0.05em",
         }}>
-          QUESTION {questionNumber} / 15
+          SORU {questionNumber} / 15
         </span>
         <DifficultyBadge questionNumber={questionNumber} />
       </div>
@@ -99,15 +99,15 @@ function DifficultyBadge({ questionNumber }: { questionNumber: number }) {
   let bg: string;
 
   if (questionNumber <= 5) {
-    label = "Easy";
+    label = "Kolay";
     color = "var(--green-400)";
     bg = "rgba(74, 222, 128, 0.12)";
   } else if (questionNumber <= 10) {
-    label = "Medium";
+    label = "Orta";
     color = "var(--gold-400)";
     bg = "rgba(251, 191, 36, 0.12)";
   } else {
-    label = "Hard";
+    label = "Zor";
     color = "var(--red-400)";
     bg = "rgba(239, 68, 68, 0.12)";
   }

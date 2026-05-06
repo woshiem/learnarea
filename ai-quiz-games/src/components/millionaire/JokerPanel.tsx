@@ -30,7 +30,7 @@ export default function JokerPanel({
         marginBottom: "10px",
         textAlign: "center",
       }}>
-        Lifelines
+        Jokerler
       </p>
       <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
         <LifelineButton
@@ -45,7 +45,7 @@ export default function JokerPanel({
         <LifelineButton
           id="lifeline-audience"
           icon="👥"
-          label="Audience"
+          label="Seyirci"
           used={audienceUsed}
           disabled={disabled}
           onClick={onAudience}
@@ -53,7 +53,7 @@ export default function JokerPanel({
         <LifelineButton
           id="lifeline-hint"
           icon="💡"
-          label="Hint"
+          label="İpucu"
           used={hintUsed}
           disabled={disabled}
           onClick={onHint}
@@ -86,8 +86,8 @@ function LifelineButton({
       className={`lifeline-btn${used ? " used" : ""}`}
       onClick={onClick}
       disabled={used || disabled}
-      title={used ? `${label} already used` : `Use ${label} lifeline`}
-      aria-label={`${label} lifeline${used ? " (used)" : ""}`}
+      title={used ? `${label} kullanıldı` : `${label} jokerini kullan`}
+      aria-label={`${label} jokeri${used ? " (kullanıldı)" : ""}`}
     >
       <span
         className="lifeline-icon"
@@ -101,7 +101,7 @@ function LifelineButton({
         {icon}
       </span>
       <span>{label}</span>
-      {used && <span style={{ fontSize: "0.65rem", color: "var(--text-muted)" }}>Used</span>}
+      {used && <span style={{ fontSize: "0.65rem", color: "var(--text-muted)" }}>Kullanıldı</span>}
     </button>
   );
 }

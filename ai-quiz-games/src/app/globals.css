@@ -56,6 +56,11 @@
   --transition-slow: 400ms ease;
 }
 
+/* ── Font Switching ───────────────────────────────────────────────────────── */
+[data-font="poppins"] body { font-family: var(--font-poppins), system-ui, sans-serif; }
+[data-font="mono"]    body { font-family: var(--font-mono), monospace; }
+[data-font="serif"]   body { font-family: var(--font-serif), Georgia, serif; }
+
 /* ── Reset & Base ─────────────────────────────────────────────────────────── */
 *,
 *::before,
@@ -521,3 +526,205 @@ body {
     font-size: 0.78rem;
   }
 }
+
+/* ── Light Theme ──────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --surface-1: rgba(255, 255, 255, 0.98);
+  --surface-2: rgba(255, 255, 255, 0.95);
+  --surface-3: rgba(241, 245, 255, 0.90);
+  --border-subtle: rgba(15, 23, 42, 0.07);
+  --border-mid: rgba(15, 23, 42, 0.14);
+  --navy-950: #f1f5ff;
+  --navy-900: #e8eeff;
+  --navy-800: #dde6ff;
+  --navy-700: #c7d5ff;
+  --navy-600: #a5b4fc;
+}
+
+[data-theme="light"] body {
+  background: #f1f5ff;
+  color: #0f172a;
+}
+
+[data-theme="light"] .bg-game {
+  background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.07) 0%, #f1f5ff 60%), #f1f5ff;
+}
+
+[data-theme="light"] .bg-auth {
+  background: radial-gradient(ellipse at 30% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 60%),
+    #f1f5ff;
+}
+
+[data-theme="light"] header {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 20px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .glass-card-gold {
+  background: linear-gradient(135deg, rgba(255, 253, 230, 0.98), rgba(255, 247, 200, 0.95));
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+[data-theme="light"] .answer-btn {
+  background: linear-gradient(135deg, rgba(241, 245, 255, 0.97), rgba(226, 232, 255, 0.95));
+  color: #0f172a;
+}
+
+[data-theme="light"] .answer-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(199, 213, 255, 0.85), rgba(180, 200, 255, 0.85));
+}
+
+[data-theme="light"] .lifeline-btn {
+  background: linear-gradient(135deg, rgba(241, 245, 255, 0.97), rgba(226, 232, 255, 0.95));
+}
+
+[data-theme="light"] .btn-ghost {
+  color: #475569;
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+[data-theme="light"] .btn-ghost:hover {
+  background: rgba(251, 191, 36, 0.06);
+}
+
+[data-theme="light"] .form-input {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .upload-zone {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #e8eeff;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+}
+
+/* ── Flashcard Flip ────────────────────────────────────────────────────────── */
+.flashcard-scene {
+  perspective: 1200px;
+  width: 100%;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flashcard-face.back {
+  transform: rotateY(180deg);
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Timer bar ────────────────────────────────────────────────────────────── */
+@keyframes timerShrink {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+.timer-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--gold-400);
+  animation: timerShrink linear forwards;
+}
+
+.timer-bar.danger {
+  background: var(--red-400);
+}
+
+/* ── Color Themes (accent overrides) ──────────────────────────────────────── */
+[data-color-theme="ocean"] {
+  --gold-300: #bfdbfe;
+  --gold-400: #60a5fa;
+  --gold-500: #3b82f6;
+  --gold-600: #2563eb;
+  --gold-glow: rgba(59, 130, 246, 0.35);
+  --border-gold: rgba(59, 130, 246, 0.4);
+}
+[data-color-theme="forest"] {
+  --gold-300: #bbf7d0;
+  --gold-400: #4ade80;
+  --gold-500: #22c55e;
+  --gold-600: #16a34a;
+  --gold-glow: rgba(74, 222, 128, 0.35);
+  --border-gold: rgba(74, 222, 128, 0.4);
+}
+[data-color-theme="purple"] {
+  --gold-300: #e9d5ff;
+  --gold-400: #c084fc;
+  --gold-500: #a855f7;
+  --gold-600: #9333ea;
+  --gold-glow: rgba(192, 132, 252, 0.35);
+  --border-gold: rgba(192, 132, 252, 0.4);
+}
+[data-color-theme="red"] {
+  --gold-300: #fecaca;
+  --gold-400: #f87171;
+  --gold-500: #ef4444;
+  --gold-600: #dc2626;
+  --gold-glow: rgba(248, 113, 113, 0.35);
+  --border-gold: rgba(248, 113, 113, 0.4);
+}
+
+/* ── Backgrounds ───────────────────────────────────────────────────────────── */
+[data-bg="mesh"] .bg-game {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(251,191,36,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.06) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px),
+    var(--navy-950);
+}
+[data-bg="aurora"] .bg-game {
+  background:
+    radial-gradient(ellipse at 30% 0%, rgba(99,102,241,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 10%, rgba(16,185,129,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 80%, rgba(251,191,36,0.08) 0%, transparent 50%),
+    var(--navy-950);
+}
+[data-bg="stars"] .bg-game {
+  background:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(ellipse at 50% 0%, var(--navy-600) 0%, var(--navy-950) 60%),
+    var(--navy-950);
+}
+
+/* ── Death Match pulse ─────────────────────────────────────────────────────── */
+@keyframes dangerPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  50% { box-shadow: 0 0 30px 8px rgba(239, 68, 68, 0.3); }
+}
+.danger-pulse { animation: dangerPulse 1s ease infinite; }
