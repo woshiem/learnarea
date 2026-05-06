@@ -1,0 +1,21 @@
+# Environment / API keys
+.env
+.env.local
+.env*.local
+*.env
+
+# Claude Code internals
+.claude/
+.claire/
+
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
