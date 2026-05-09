@@ -293,7 +293,7 @@ export default function ProfilePage() {
             {profile.badges.length > 0 && (
               <div style={{ marginBottom: "28px" }}>
                 <p style={{ color: "var(--text-muted)", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700, marginBottom: "12px" }}>{t.earned}</p>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: "10px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: "10px" }}>
                   {ALL_BADGES.filter(b => profile.badges.includes(b.id)).map(badge => (
                     <div key={badge.id} style={{ display: "flex", alignItems: "center", gap: "14px", padding: "14px 16px", background: `${lc}0d`, border: `1px solid ${lc}30`, borderRadius: "14px" }}>
                       <span style={{ fontSize: "2rem", lineHeight: 1, flexShrink: 0 }}>{badge.icon}</span>
@@ -311,7 +311,7 @@ export default function ProfilePage() {
             {/* Locked */}
             <div>
               <p style={{ color: "var(--text-muted)", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 700, marginBottom: "12px" }}>{t.locked}</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: "10px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: "10px" }}>
                 {ALL_BADGES.filter(b => !profile.badges.includes(b.id)).map(badge => (
                   <div key={badge.id} style={{ display: "flex", alignItems: "center", gap: "14px", padding: "14px 16px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", opacity: 0.45 }}>
                     <span style={{ fontSize: "2rem", lineHeight: 1, flexShrink: 0, filter: "grayscale(1)" }}>{badge.icon}</span>

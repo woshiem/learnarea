@@ -516,14 +516,98 @@ body {
 .error-text { color: var(--red-400); font-size: 0.85rem; margin-top: 6px; }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
+
+/* Millionaire two-column layout */
+.millionaire-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  align-items: start;
+}
+.millionaire-sidebar { display: block; }
+
+/* Answer button grid — 2 col desktop, 1 col mobile */
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Game cards grid */
+.game-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Profile badge grid */
+.profile-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+/* ── Tablet (≤ 768px) ─── */
 @media (max-width: 768px) {
   .answer-btn {
-    padding: 12px 16px;
-    font-size: 0.9rem;
+    padding: 12px 14px;
+    font-size: 0.88rem;
   }
   .ladder-rung {
     padding: 5px 10px;
     font-size: 0.78rem;
+  }
+  /* Hide money ladder sidebar on tablet — show compact below */
+  .millionaire-layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+  .millionaire-sidebar {
+    display: none;
+  }
+  .game-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .profile-badge-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* ── Mobile (≤ 480px) ─── */
+@media (max-width: 480px) {
+  /* Single column answers on tiny screens */
+  .answers-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .game-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-badge-grid {
+    grid-template-columns: 1fr;
+  }
+  /* Smaller header padding */
+  header {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  /* Compact main padding */
+  main {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  /* Glass card tighter padding */
+  .glass-card, .glass-card-gold {
+    padding: 16px !important;
+  }
+  /* Smaller result score cards */
+  .result-score-card {
+    padding: 20px 24px !important;
   }
 }
 

@@ -113,7 +113,7 @@ export default function GamesPage() {
     <div className="bg-game" style={{ minHeight: "100vh" }}>
       {/* Header */}
       <header style={{
-        borderBottom: "1px solid var(--border-subtle)", padding: "14px 32px",
+        borderBottom: "1px solid var(--border-subtle)", padding: "14px clamp(14px, 4vw, 32px)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         position: "sticky", top: 0, zIndex: 50, backdropFilter: "blur(12px)",
       }}>
@@ -212,7 +212,7 @@ export default function GamesPage() {
         </div>
 
         {/* Game Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "20px" }}>
+        <div className="game-cards-grid">
           {GAME_MODES.map((game, index) => {
             const isAvailable = game.href !== "#";
             const isReady = isAvailable && (!game.needsPdf || !!pdfFile);

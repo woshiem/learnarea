@@ -145,7 +145,7 @@ export default function TimeQuizPage() {
       </div>
       <main style={{ maxWidth: "700px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "24px" }}>
-          <span style={{ fontSize: "3.5rem", fontWeight: 900, lineHeight: 1, color: isDanger ? "var(--red-400)" : timeLeft <= 10 ? "var(--gold-400)" : "var(--text-primary)", transition: "color 0.3s ease" }}>{timeLeft}</span>
+          <span style={{ fontSize: "clamp(2.2rem, 8vw, 3.5rem)", fontWeight: 900, lineHeight: 1, color: isDanger ? "var(--red-400)" : timeLeft <= 10 ? "var(--gold-400)" : "var(--text-primary)", transition: "color 0.3s ease" }}>{timeLeft}</span>
           <span style={{ color: "var(--text-muted)", fontSize: "0.9rem", marginLeft: "4px" }}>sn</span>
         </div>
         <div className="glass-card-gold" style={{ padding: "28px 32px", marginBottom: "24px" }}>
@@ -154,7 +154,7 @@ export default function TimeQuizPage() {
           </div>
           <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.15rem)", fontWeight: 600, lineHeight: 1.6 }}>{q.question}</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+        <div className="answers-grid" style={{ gap: "12px" }}>
           {q.options.map((option, i) => {
             let bg = "linear-gradient(135deg, rgba(13,31,60,0.9), rgba(18,40,80,0.9))";
             let border = "var(--border-gold)";

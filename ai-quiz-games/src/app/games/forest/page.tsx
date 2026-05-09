@@ -122,7 +122,7 @@ export default function ForestPage() {
               border: "1px solid rgba(74,222,128,0.2)",
               background: "linear-gradient(135deg, rgba(10,30,15,0.9), rgba(13,40,20,0.9))",
             }}>
-              <div style={{ fontSize: "7rem", lineHeight: 1, marginBottom: "10px", filter: profile.forestSessions === 0 ? "grayscale(0.4)" : "none" }}>
+              <div style={{ fontSize: "clamp(4rem, 18vw, 7rem)", lineHeight: 1, marginBottom: "10px", filter: profile.forestSessions === 0 ? "grayscale(0.4)" : "none" }}>
                 {tree.emoji}
               </div>
               <p style={{ color: "var(--green-400)", fontWeight: 700, fontSize: "1.05rem" }}>{tree.label}</p>
@@ -213,7 +213,7 @@ export default function ForestPage() {
               </div>
             </div>
 
-            <div style={{ fontSize: "4.5rem", marginBottom: "8px" }}>{tree.emoji}</div>
+            <div style={{ fontSize: "clamp(3rem, 12vw, 4.5rem)", marginBottom: "8px" }}>{tree.emoji}</div>
             <p style={{ color: "var(--green-400)", fontWeight: 700, marginBottom: "6px" }}>{tree.label}</p>
             <p style={{ color: "var(--text-muted)", fontSize: "0.88rem", marginBottom: "28px", minHeight: "22px" }}>
               {MOTIVATIONAL[motivIdx]}

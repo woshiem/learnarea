@@ -13,7 +13,7 @@ export default function HomePage() {
       {/* Nav */}
       <nav style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "18px 40px", borderBottom: "1px solid var(--border-subtle)",
+        padding: "16px clamp(16px, 5vw, 40px)", borderBottom: "1px solid var(--border-subtle)",
         maxWidth: "1200px", margin: "0 auto", width: "100%",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -25,14 +25,14 @@ export default function HomePage() {
             <span style={{ color: "var(--text-muted)", fontSize: "0.75rem", marginLeft: "8px" }}>{t.appTagline}</span>
           </div>
         </div>
-        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-          <button onClick={toggleTheme} className="btn-ghost" style={{ padding: "7px 14px", fontSize: "0.85rem" }}>
+        <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+          <button onClick={toggleTheme} className="btn-ghost" style={{ padding: "7px 12px", fontSize: "0.85rem" }}>
             {theme === "dark" ? "☀️" : "🌙"}
           </button>
-          <button onClick={toggleLang} className="btn-ghost" style={{ padding: "7px 14px", fontSize: "0.85rem", fontWeight: 700 }}>
+          <button onClick={toggleLang} className="btn-ghost" style={{ padding: "7px 12px", fontSize: "0.85rem", fontWeight: 700 }}>
             {t.langSwitch}
           </button>
-          <Link href="/games" className="btn-gold" style={{ padding: "8px 20px" }}>
+          <Link href="/games" className="btn-gold" style={{ padding: "8px clamp(12px, 3vw, 20px)", fontSize: "0.9rem" }}>
             {t.startPlaying}
           </Link>
         </div>
@@ -41,16 +41,16 @@ export default function HomePage() {
       {/* Hero */}
       <section style={{
         flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
-        justifyContent: "center", textAlign: "center", padding: "80px 24px",
-        maxWidth: "900px", margin: "0 auto",
+        justifyContent: "center", textAlign: "center", padding: "clamp(40px, 10vw, 80px) 20px",
+        maxWidth: "900px", margin: "0 auto", width: "100%",
       }}>
-        <div className="animate-fade-in-up">
+        <div className="animate-fade-in-up" style={{ width: "100%" }}>
           <span className="badge badge-gold" style={{ marginBottom: "24px" }}>
             {t.aiPowered}
           </span>
 
           <h1 style={{
-            fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
+            fontSize: "clamp(2rem, 7vw, 4.5rem)",
             fontWeight: 900, lineHeight: 1.1,
             letterSpacing: "-0.03em", marginBottom: "24px",
           }}>
@@ -60,13 +60,13 @@ export default function HomePage() {
 
           <p style={{
             color: "var(--text-secondary)",
-            fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
-            maxWidth: "600px", margin: "0 auto 16px", lineHeight: 1.7,
+            fontSize: "clamp(0.95rem, 2.5vw, 1.2rem)",
+            maxWidth: "600px", margin: "0 auto 32px", lineHeight: 1.7,
           }}>
             {t.heroDesc}
           </p>
 
-          <Link href="/games" className="btn-gold" style={{ padding: "14px 36px", fontSize: "1.05rem" }}>
+          <Link href="/games" className="btn-gold" style={{ padding: "14px clamp(24px, 5vw, 36px)", fontSize: "1.05rem" }}>
             {t.startPlaying}
           </Link>
         </div>
@@ -74,8 +74,8 @@ export default function HomePage() {
         {/* Feature cards */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "20px", marginTop: "80px", width: "100%", maxWidth: "860px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "16px", marginTop: "clamp(40px, 8vw, 80px)", width: "100%", maxWidth: "860px",
         }}>
           {[
             { icon: "📄", title: t.feature1Title, desc: t.feature1Desc },

@@ -226,7 +226,7 @@ export default function DeathMatchPage() {
         {/* Timer + question number */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
           <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>Soru {current + 1} / {questions.length}</span>
-          <span style={{ fontSize: "2.8rem", fontWeight: 900, lineHeight: 1, color: isDanger ? "var(--red-400)" : timeLeft <= 4 ? "#f97316" : "var(--text-primary)", transition: "color 0.3s ease", textShadow: isDanger ? "0 0 20px var(--red-400)" : "none" }}>
+          <span style={{ fontSize: "clamp(1.8rem, 6vw, 2.8rem)", fontWeight: 900, lineHeight: 1, color: isDanger ? "var(--red-400)" : timeLeft <= 4 ? "#f97316" : "var(--text-primary)", transition: "color 0.3s ease", textShadow: isDanger ? "0 0 20px var(--red-400)" : "none" }}>
             {timeLeft}
           </span>
         </div>
@@ -237,7 +237,7 @@ export default function DeathMatchPage() {
         </div>
 
         {/* Options */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+        <div className="answers-grid" style={{ gap: "10px" }}>
           {q.options.map((option, i) => {
             let bg = "linear-gradient(135deg, rgba(20,5,5,0.9), rgba(40,10,10,0.9))";
             let borderColor = "rgba(239,68,68,0.3)";

@@ -193,8 +193,8 @@ export default function MillionairePage() {
         <button onClick={() => router.push("/games")} className="btn-ghost" style={{ padding: "6px 14px", fontSize: "0.8rem" }}>✕ Çıkış</button>
       </header>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 220px", gap: "24px", maxWidth: "1100px", margin: "0 auto", padding: "28px 24px", alignItems: "start" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+      <div className="millionaire-layout">
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <JokerPanel
             fiftyFiftyUsed={lifelines.fiftyFifty}
             audienceUsed={lifelines.audience}
@@ -228,7 +228,7 @@ export default function MillionairePage() {
             </div>
           )}
         </div>
-        <aside>
+        <aside className="millionaire-sidebar">
           <div className="glass-card" style={{ padding: "16px 12px", position: "sticky", top: "80px" }}>
             <MoneyLadder currentQuestion={currentQ} />
           </div>
